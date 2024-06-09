@@ -26,6 +26,12 @@ public class Autor {
         this.anioDeFallecimiento = anioDeFallecimiento;
     }
 
+    public Autor(DataAutor dataAutor){
+        this.nombre = dataAutor.nombre();
+        this.anioDeNacimiento = dataAutor.anioDeCumpleanios();
+        this.anioDeFallecimiento = dataAutor.anioDeFallecimieto();
+    }
+
     public Long getId() {
         return id;
     }
@@ -69,7 +75,6 @@ public class Autor {
     @Override
     public String toString() {
         return "Autor{" +
-                "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", anioDeNacimiento=" + anioDeNacimiento +
                 ", anioDeFallecimiento=" + anioDeFallecimiento +

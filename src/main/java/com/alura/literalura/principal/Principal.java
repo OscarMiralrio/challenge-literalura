@@ -3,6 +3,7 @@ package com.alura.literalura.principal;
 import com.alura.literalura.conexion.ConsumoAPI;
 import com.alura.literalura.mapper.ConvierteDatos;
 import com.alura.literalura.model.Data;
+import com.alura.literalura.model.Libro;
 
 import java.util.Scanner;
 
@@ -23,6 +24,10 @@ public class Principal {
         Data dataLibro = mapper.dataMapper(json, Data.class);
         System.out.println("DATA LIBRO CONVERTIDO");
         dataLibro.libros().forEach(System.out::println);
+        System.out.println();
+
+        
+
     }
 
 }

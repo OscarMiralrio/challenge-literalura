@@ -27,6 +27,12 @@ public class Libro {
         this.totalDescargas = totalDescargas;
     }
 
+    public Libro(DataLibro dataLibro){
+        this.titulo = dataLibro.titulo();
+        this.idiomas = dataLibro.idioma();
+        this.totalDescargas = dataLibro.numeroDeDescargas();
+    }
+
     public Long getId() {
         return id;
     }
@@ -70,7 +76,7 @@ public class Libro {
     @Override
     public String toString() {
         return "Libro{" +
-                "id=" + id +
+                ", titulo='" + titulo + '\'' +
                 ", idiomas=" + idiomas +
                 ", totalDescargas=" + totalDescargas +
                 '}';
