@@ -2,7 +2,7 @@
 
 Este proyecto fue realizado con el objetivo de realizar el Challenge del curso de Java con Spring Boot, el cual tiene la funcionalidad que de consumir una API de libros gratuitos y registrarlos en una base de datos en PostgreSQL.
  
-<h2>## :hammer: Funcionalidades del proyecto</h2>
+<h2> :hammer: Funcionalidades del proyecto</h2>
 
 - 🔍 `Buscar libro por titulo` :: Realiza la busqueda mendiante una API gratuita para buscar el libro ya sea por su titulo completo o alguna palabra del mismo y lo inserta en la base de datos configurada.
 - :printer: `Mostrar libros registrados`: Realiza la busqueda de todos los libros registrados y los imprime en consola.
