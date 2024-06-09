@@ -11,14 +11,14 @@ Este proyecto fue realizado con el objetivo de realizar el Challenge del curso d
 - :printer: `Mostrar libros por idioma`: Muestra los libros por el idioma en el que se encuentran.
 
 
-##🧑‍💻 Tecnologías Utilizadas
+<h2>🧑‍💻 Tecnologías Utilizadas </h2>
 
 - Java
 - Spring Boot 3
 - JPA
 - PostgreSQL
 
-## Instalación
+<h2> 🧑‍💻 Instalación </h2>
 
 1. Clona este repositorio.
 2. Abre el proyecto en tu IDE preferido.
