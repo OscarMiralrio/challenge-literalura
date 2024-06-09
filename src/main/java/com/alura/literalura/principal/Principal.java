@@ -67,6 +67,7 @@ public class Principal {
                     printAllAuthors();
                     break;
                 case 4:
+                    autoresVivosEnDeterminadoAnio();
                     break;
                 case 5:
                     break;
@@ -122,6 +123,19 @@ public class Principal {
     private void printAllAuthors() {
         List<Autor> autores = autorRepository.findAll();
         autores.forEach(System.out::println);
+    }
+
+    private void autoresVivosEnDeterminadoAnio(){
+        System.out.println("Ingresa el año que deseas ver los autores que estuvieron vivos:");
+        try {
+            var anio = teclado.nextInt();
+            teclado.nextLine();
+            List<Autor> autores = autorRepository.obtieneAutoresVivosEnUnAnio(anio);
+            autores.forEach(System.out::println);
+        }catch (InputMismatchException e){
+            System.err.println(" :: Año Invalido:: \n");
+            teclado.nextLine();
+        }
     }
 
 }
