@@ -64,6 +64,7 @@ public class Principal {
                     printAllBooks();
                     break;
                 case 3:
+                    printAllAuthors();
                     break;
                 case 4:
                     break;
@@ -116,6 +117,11 @@ public class Principal {
     private void printAllBooks() {
         List<Libro> libros = libroRepository.findAll();
         libros.forEach(System.out::println);
+    }
+
+    private void printAllAuthors() {
+        List<Autor> autores = autorRepository.findAll();
+        autores.forEach(System.out::println);
     }
 
 }
