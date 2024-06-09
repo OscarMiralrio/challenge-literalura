@@ -11,7 +11,7 @@ Este proyecto fue realizado con el objetivo de realizar el Challenge del curso d
 - :printer: `Mostrar libros por idioma`: Muestra los libros por el idioma en el que se encuentran.
 
 
-## Tecnologías Utilizadas
+##🧑‍💻 Tecnologías Utilizadas
 
 - Java
 - Spring Boot 3
