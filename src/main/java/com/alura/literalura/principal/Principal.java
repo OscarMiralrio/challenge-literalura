@@ -70,6 +70,7 @@ public class Principal {
                     autoresVivosEnDeterminadoAnio();
                     break;
                 case 5:
+                    findByIdioma();
                     break;
                 case 0:
                     System.out.println("Cerrando la aplicación...");
@@ -136,6 +137,27 @@ public class Principal {
             System.err.println(" :: Año Invalido:: \n");
             teclado.nextLine();
         }
+    }
+
+    private void findByIdioma(){
+        System.out.println("Escribe la abreviatura del idioma por el que deseas buscar los libros");
+
+        Arrays.stream(Idioma.values()).collect(Collectors.toList()).forEach(
+                i -> System.out.println(i.name() + " - " + i.getIdioma())
+        );
+
+        try {
+            var idioma = teclado.nextLine();
+            var language = Idioma.fromString(idioma);
+            List<Libro> librosPorIdioma = libroRepository.findByIdioma(language);
+            if (librosPorIdioma.isEmpty()){
+                System.err.println("No se encontraron libros registrados en ese idioma.");
+            }
+            librosPorIdioma.forEach(System.out::println);
+        } catch (IllegalArgumentException e){
+            System.err.println(e.getMessage());
+        }
+
     }
 
 }

@@ -13,7 +13,8 @@ public class Libro {
     private Long id;
     @Column(unique = true)
     private String titulo;
-    private String idioma;
+    @Enumerated(EnumType.STRING)
+    private Idioma idioma;
     private Integer totalDescargas;
 
     @ManyToOne
@@ -23,13 +24,13 @@ public class Libro {
 
     public Libro(String titulo, String idioma, Integer totalDescargas) {
         this.titulo = titulo;
-        this.idioma = idioma;
+        this.idioma = Idioma.fromString(idioma);
         this.totalDescargas = totalDescargas;
     }
 
     public Libro(DataLibro dataLibro){
         this.titulo = dataLibro.titulo();
-        this.idioma = dataLibro.idioma().get(0);
+        this.idioma = Idioma.fromString(dataLibro.idioma().get(0));
         this.totalDescargas = dataLibro.numeroDeDescargas();
     }
 
@@ -49,11 +50,11 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public String getIdioma() {
+    public Idioma getIdioma() {
         return idioma;
     }
 
-    public void setIdiomas(String idioma) {
+    public void setIdioma(Idioma idioma) {
         this.idioma = idioma;
     }
 
