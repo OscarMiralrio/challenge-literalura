@@ -1,4 +1,4 @@
-<h1 align="center"> Literalura </h1>
+<h1 align="center">📖 Literalura 📖</h1>
 
 Este proyecto fue realizado con el objetivo de realizar el Challenge del curso de Java con Spring Boot, el cual tiene la funcionalidad que de consumir una API de libros gratuitos y registrarlos en una base de datos en PostgreSQL.
  
