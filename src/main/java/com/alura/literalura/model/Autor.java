@@ -15,7 +15,7 @@ public class Autor {
     private Integer anioDeNacimiento;
     private Integer anioDeFallecimiento;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Libro> libros;
 
     public Autor(){}
@@ -75,9 +75,10 @@ public class Autor {
     @Override
     public String toString() {
         return "Autor{" +
-                ", nombre='" + nombre + '\'' +
+                " nombre='" + nombre + '\'' +
                 ", anioDeNacimiento=" + anioDeNacimiento +
                 ", anioDeFallecimiento=" + anioDeFallecimiento +
+                ", libros=" + libros +
                 '}';
     }
 }

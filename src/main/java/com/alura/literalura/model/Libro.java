@@ -13,23 +13,23 @@ public class Libro {
     private Long id;
     @Column(unique = true)
     private String titulo;
-    private List<String> idiomas;
+    private String idioma;
     private Integer totalDescargas;
 
-    @ManyToMany(mappedBy = "libros", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Autor> autores;
+    @ManyToOne
+    private Autor autor;
 
     public Libro(){}
 
-    public Libro(String titulo, List<String> idiomas, Integer totalDescargas) {
+    public Libro(String titulo, String idioma, Integer totalDescargas) {
         this.titulo = titulo;
-        this.idiomas = idiomas;
+        this.idioma = idioma;
         this.totalDescargas = totalDescargas;
     }
 
     public Libro(DataLibro dataLibro){
         this.titulo = dataLibro.titulo();
-        this.idiomas = dataLibro.idioma();
+        this.idioma = dataLibro.idioma().get(0);
         this.totalDescargas = dataLibro.numeroDeDescargas();
     }
 
@@ -49,12 +49,12 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public List<String> getIdiomas() {
-        return idiomas;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setIdiomas(List<String> idiomas) {
-        this.idiomas = idiomas;
+    public void setIdiomas(String idioma) {
+        this.idioma = idioma;
     }
 
     public Integer getTotalDescargas() {
@@ -65,20 +65,20 @@ public class Libro {
         this.totalDescargas = totalDescargas;
     }
 
-    public List<Autor> getAutores() {
-        return autores;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setAutores(List<Autor> autores) {
-        this.autores = autores;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     @Override
     public String toString() {
-        return "Libro{" +
-                ", titulo='" + titulo + '\'' +
-                ", idiomas=" + idiomas +
-                ", totalDescargas=" + totalDescargas +
-                '}';
+        return "\n========== Libro ==========\n" +
+                "Titulo = " + titulo +
+                "\nAutor = " + autor.getNombre() +
+                "\nIdioma = " + idioma +
+                "\nNúmero de Descargas = " + totalDescargas;
     }
 }
